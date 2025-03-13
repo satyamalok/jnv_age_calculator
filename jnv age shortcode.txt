@@ -1,2 +1,2 @@
-<div id="navodaya-calculator-widget"></div>
-<script src="https://cdn.jsdelivr.net/gh/your-repo/jnv-calculator.js"></script>
+<div id="jnv-school-widget"></div>
+<script src="https://cdn.jsdelivr.net/gh/YOUR_USERNAME/YOUR_REPOSITORY@refs/heads/main/calculator.js"></script>
