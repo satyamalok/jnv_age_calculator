@@ -1,2 +1,2 @@
 <div id="jnv-school-widget"></div>
-<script src="https://cdn.jsdelivr.net/gh/YOUR_USERNAME/YOUR_REPOSITORY@refs/heads/main/calculator.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/satyamalok/jnv_age_calculator@refs/heads/main/jnv%20age%20calculator.js"></script>
