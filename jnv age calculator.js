@@ -1,5 +1,5 @@
 (function() {
-    // Add calculator HTML
+    
     const calculatorHTML = `
         <div class="jnv-school-calculator">
             <div class="calculator-container">
@@ -93,7 +93,7 @@
         </div>
     `;
 
-    // Add calculator styles
+    
     const calculatorStyles = `
         <style>
             .jnv-school-calculator {
@@ -206,17 +206,17 @@
         </style>
     `;
 
-    // Insert HTML and CSS into the page
+    
     const widget = document.getElementById('jnv-school-widget');
     widget.innerHTML = calculatorStyles + calculatorHTML;
 
-    // Define all calculator functions in the global scope
+    
     window.populateDateDropdowns = function() {
         var daySelect = document.getElementById("birthDay");
         var monthSelect = document.getElementById("birthMonth");
         var yearSelect = document.getElementById("birthYear");
 
-        // Populate days
+        
         for (var i = 1; i <= 31; i++) {
             var option = document.createElement("option");
             option.value = i;
@@ -224,7 +224,7 @@
             daySelect.add(option);
         }
 
-        // Populate months with Hindi translations
+        
         var months = [
             {value: 0, text: "January"},
             {value: 1, text: "February"},
@@ -246,7 +246,7 @@
             monthSelect.add(option);
         });
 
-        // Including years for both Class 6 and Class 9
+        
         for (var i = 2020; i >= 2008; i--) {
             var option = document.createElement("option");
             option.value = i;
@@ -302,13 +302,13 @@
     window.checkEligibility = function(birthdate, examClass) {
         var startDate, endDate;
         
-        // For JNV 2026 admissions
+        
         if (examClass === "6") {
-            // Class 6: Born between May 1, 2014 and July 31, 2016
+            
             startDate = new Date(2014, 4, 1); // May 1, 2014
             endDate = new Date(2016, 6, 31, 23, 59, 59, 999); // July 31, 2016 23:59:59.999
         } else if (examClass === "9") {
-            // Class 9: Born between May 1, 2011 and July 31, 2013
+            
             startDate = new Date(2011, 4, 1); // May 1, 2011
             endDate = new Date(2013, 6, 31, 23, 59, 59, 999); // July 31, 2013 23:59:59.999
         }
@@ -426,6 +426,6 @@
         });
     }
 
-    // Initialize the calculator
+    
     populateDateDropdowns();
 })();
