@@ -1,0 +1,2 @@
+<div id="navodaya-calculator-widget"></div>
+<script src="https://cdn.jsdelivr.net/gh/your-repo/jnv-calculator.js"></script>
