@@ -1,5 +1,4 @@
-(function() {
-    
+(function() {    
     const calculatorHTML = `
         <div class="jnv-school-calculator">
             <div class="calculator-container">
@@ -305,12 +304,12 @@
         
         if (examClass === "6") {
             
-            startDate = new Date(2014, 4, 1); // May 1, 2014
-            endDate = new Date(2016, 6, 31, 23, 59, 59, 999); // July 31, 2016 23:59:59.999
+            startDate = new Date(2014, 4, 1); 
+            endDate = new Date(2016, 6, 31, 23, 59, 59, 999); 
         } else if (examClass === "9") {
             
-            startDate = new Date(2011, 4, 1); // May 1, 2011
-            endDate = new Date(2013, 6, 31, 23, 59, 59, 999); // July 31, 2013 23:59:59.999
+            startDate = new Date(2011, 4, 1);
+            endDate = new Date(2013, 6, 31, 23, 59, 59, 999); 
         }
         
         return birthdate >= startDate && birthdate <= endDate;
@@ -353,7 +352,7 @@
         
         var birthdate = new Date(birthYear, birthMonth, birthDay);
         
-        var examYear = 2026; // Fixed for JNV 2026
+        var examYear = 2026; 
         var classSelection = document.getElementById("classSelection").value;
         var stateSelection = document.getElementById("stateSelection").value;
         var examClass = document.querySelector('input[name="examClass"]:checked').value;
@@ -370,7 +369,7 @@
         }
         
         var isEligible = checkEligibility(birthdate, examClass);
-        var age = calculateAge(birthdate, new Date(2026, 2, 31)); // Age as of March 31, 2026
+        var age = calculateAge(birthdate, new Date(2026, 2, 31)); 
         
         var result = document.getElementById("result");
         var submitButton = document.getElementById("submitButton");
