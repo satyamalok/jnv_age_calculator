@@ -3,41 +3,54 @@ const NVSCalculator = {
         this.populateDateDropdowns();
         this.populateStateDropdown();
         this.populateClassDropdown();
+        this.injectStyles();
     },
 
-    populateDateDropdowns: function() {
-        const daySelect = document.getElementById('nvsBirthDay');
-        const monthSelect = document.getElementById('nvsBirthMonth');
-        const yearSelect = document.getElementById('nvsBirthYear');
-
-        for(let i = 1; i <= 31; i++) {
-            const option = document.createElement('option');
-            option.value = i;
-            option.textContent = i;
-            daySelect.appendChild(option);
-        }
-
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-                      'July', 'August', 'September', 'October', 'November', 'December'];
-        months.forEach((month, index) => {
-            const option = document.createElement('option');
-            option.value = index + 1;
-            option.textContent = month;
-            monthSelect.appendChild(option);
-        });
-
-        for(let i = 2018; i >= 2009; i--) {
-            const option = document.createElement('option');
-            option.value = i;
-            option.textContent = i;
-            yearSelect.appendChild(option);
-        }
-    },
-
-    checkEligibility: function(birthdate) {
-        const startDate = new Date(2014, 4, 1);
-        const endDate = new Date(2016, 6, 31);
-        return birthdate >= startDate && birthdate <= endDate;
+    injectStyles: function() {
+        const styles = `
+            <style>
+                .nvs-wrapper {
+                    background-image: linear-gradient(to right top, #e0e3c2, #f3dec3, #fedbce, #ffdadd, #fddae6, #f9dcee, #f2def6, #eedef9, #e9defb, #e3defd, #dddeff);
+                    padding: 20px;
+                    border-radius: 15px;
+                    width: auto;
+                    margin: auto;
+                }
+                .nvs-form {
+                    max-width: 400px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    border: 2px solid #290324;
+                    border-radius: 5px;
+                    background-color: #f9f9f9;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                .nvs-button {
+                    width: 100%;
+                    padding: 15px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #000000;
+                    background-color: #F1C40F;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+                .nvs-button:hover {
+                    background-color: #f1c40f;
+                }
+                .nvs-result {
+                    margin-top: 20px;
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+                .nvs-result.success { color: darkgreen; }
+                .nvs-result.failure { color: red; }
+            </style>
+        `;
+        document.head.insertAdjacentHTML("beforeend", styles);
     },
 
     generateLead: function() {
